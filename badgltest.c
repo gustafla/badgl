@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include <SDL.h>
 #include <GL/gl.h>
 // Compile with -DGL_GLEXT_PROTOTYPES
