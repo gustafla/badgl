@@ -3,13 +3,13 @@ TARGET=badgltest
 CC=gcc
 PKGS=sdl2 gl
 CFLAGS+=$(shell pkg-config --cflags $(PKGS)) -DGL_GLEXT_PROTOTYPES
-LDLIBS+=$(shell pkg-config --libs $(PKGS))
+LDFLAGS+=$(shell pkg-config --libs $(PKGS))
 
 SOURCES=badgltest.c
 OBJS=$(patsubst %.c,%.o,$(SOURCES))
 
 $(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $(TARGET) $(CFLAGS) $(LDLIBS)
+	$(CC) -o $(TARGET) $(CFLAGS) $(OBJS) $(LDFLAGS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
@@ -17,5 +17,4 @@ $(TARGET): $(OBJS)
 .PHONY: clean
 
 clean:
-	rm -f $(TARGET)
-	find . -name "*.o" -delete
+	rm -f $(TARGET) $(OBJS)
