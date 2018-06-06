@@ -2,8 +2,8 @@ TARGET=badgltest
 
 CC=gcc
 PKGS=sdl2 gl
-CFLAGS=$(shell pkg-config --cflags $(PKGS)) -DGL_GLEXT_PROTOTYPES
-LDLIBS=$(shell pkg-config --libs $(PKGS))
+CFLAGS+=$(shell pkg-config --cflags $(PKGS)) -DGL_GLEXT_PROTOTYPES
+LDLIBS+=$(shell pkg-config --libs $(PKGS))
 
 SOURCES=badgltest.c
 OBJS=$(patsubst %.c,%.o,$(SOURCES))
