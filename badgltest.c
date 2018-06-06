@@ -15,6 +15,7 @@ int main() {
 
     glClearColor(1., 0., 0., 1.);
 
+    // Compiling or linking this should fail if things aren't set up correctly
     glCreateShader(GL_VERTEX_SHADER);
 
     SDL_Event e;
