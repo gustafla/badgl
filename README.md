@@ -8,7 +8,7 @@ GLEW or GLFW.
 On most UNIXlike systems, the functions are actually defined just fine, ready
 for linking, in the libGL.so* library. Even on NVidia. This means that you can
 straight up use all functions your context supports, just by adding
-\`pkg-config --libs gl\` to your LDLIBS!
+\`pkg-config --libs gl\` to your LDLIBS/LDFLAGS!
 
 Headers you can get by \#including GL/gl.h, and GL/glext.h after that, with
 -DGL\_GLEXT\_PROTOTYPES in your CFLAGS.
