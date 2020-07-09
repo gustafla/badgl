@@ -1,7 +1,7 @@
-#include <SDL.h>
 #include <GL/gl.h>
 // Compile with -DGL_GLEXT_PROTOTYPES
 #include <GL/glext.h>
+#include <SDL.h>
 
 int main() {
     SDL_Init(SDL_INIT_VIDEO);
@@ -27,7 +27,8 @@ int main() {
         SDL_PollEvent(&e);
         if (e.type == SDL_QUIT) {
             break;
-        } else if (e.type == SDL_KEYDOWN) {
+        }
+        if (e.type == SDL_KEYDOWN) {
             if (e.key.keysym.sym == SDLK_ESCAPE || e.key.keysym.sym == SDLK_q) {
                 break;
             }
